@@ -1,0 +1,70 @@
+$fonts: ("Montserrat", "Regular", 400),
+("Montserrat", "Medium", 500),
+("Montserrat", "SemiBold", 600),
+("Montserrat", "Bold", 700),
+("Montserrat", "ExtraBold", 800);
+
+@each $name,
+$sub-name,
+$w in $fonts {
+    @font-face {
+        font-family: $name;
+        src: url(../fonts/#{$name}-#{$sub-name}.woff2);
+        font-weight: $w;
+    }
+}
+
+:root {
+    --white: #fff;
+    --bg: #080808;
+    --blue: #61dbfb;
+    --green: #01f495;
+    --purple: #f856ff;
+}
+
+html,
+body {
+    scroll-behavior: smooth;
+    // user-select: none;
+    // cursor: none;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    min-width: 320px;
+    background-color: var(--bg);
+    overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+    padding: 0;
+}
